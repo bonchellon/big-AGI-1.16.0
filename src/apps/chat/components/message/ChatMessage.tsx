@@ -631,6 +631,7 @@ export function ChatMessage(props: {
             onContextMenu={(props.onMessageEdit && ENABLE_SELECTION_RIGHT_CLICK_MENU) ? handleBlocksContextMenu : undefined}
             onDoubleClick={(props.onMessageEdit && doubleClickToEdit) ? handleBlocksDoubleClick : undefined}
             optiAllowMemo={messageTyping}
+            
           />
 
         )}
@@ -666,9 +667,10 @@ export function ChatMessage(props: {
 
           {fromSystem && (
             <ListItem>
-              <Typography level='body-sm'>
+              <Typography sx={{ fontSize: '16px' }}>
                 System message
               </Typography>
+              
             </ListItem>
           )}
 
@@ -691,7 +693,7 @@ export function ChatMessage(props: {
             {!!onMessageToggleUserFlag && (
               <MenuItem onClick={handleOpsToggleStarred} sx={{ flexGrow: 0, px: 1 }}>
                 {isUserStarred
-                  ? <StarRoundedIcon color='primary' sx={{ fontSize: 'xl2' }} />
+                  ? <StarRoundedIcon color='primary' sx={{ fontSize: 'xl3' }} />
                   : <StarOutlineRoundedIcon sx={{ fontSize: 'xl2' }} />
                 }
               </MenuItem>
