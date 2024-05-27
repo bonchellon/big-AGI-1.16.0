@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
-import PersonIcon from '@mui/icons-material/Person';
+
 
 import type { SxProps } from '@mui/joy/styles/types';
 import { Avatar, Box, ButtonGroup, CircularProgress, IconButton, ListDivider, ListItem, ListItemDecorator, MenuItem, Switch, Tooltip, Typography } from '@mui/joy';
@@ -20,6 +20,8 @@ import ReplayIcon from '@mui/icons-material/Replay';
 import ReplyRoundedIcon from '@mui/icons-material/ReplyRounded';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
+import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
+
 import StarOutlineRoundedIcon from '@mui/icons-material/StarOutlineRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -139,7 +141,8 @@ export function makeAvatar(messageAvatar: string | null, messageRole: DMessage['
         </Box>;
 
       // default assistant avatar
-      return <SmartToyOutlinedIcon sx={avatarIconSx} />; // https://mui.com/static/images/avatar/2.jpg
+      return <AutoAwesomeOutlinedIcon sx={avatarIconSx} />; // https://mui.com/static/images/avatar/2.jpg
+
   }
   return <Avatar alt={messageSender} />;
 }
@@ -597,8 +600,9 @@ export function ChatMessage(props: {
           {/* Assistant model name */}
           {fromAssistant && (
             <Tooltip arrow title={messageTyping ? null : (messageOriginLLM || 'unk-model')} variant='solid'>
-              <PersonIcon sx={{ fontSize: '24px' }} />
-            </Tooltip>
+  <AutoAwesomeOutlinedIcon sx={{ fontSize: '20px' }} />
+</Tooltip>
+
           )}
 
           </Box>
